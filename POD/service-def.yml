@@ -1,0 +1,22 @@
+# for service structure with in node and port 300008
+
+apiVersion: V1
+
+Kind: service
+
+metadata:
+  name: myapp-service
+
+spec: 
+  type: NodePort
+  Ports:
+    - targetPort: 80
+      port: 80
+      NodePort: 30008
+
+  selector: 
+      app: myapp
+      type: front-end 
+
+# kubectl create -f service.def.yml
+# kubectl get service     
